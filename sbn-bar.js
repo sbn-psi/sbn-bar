@@ -9,12 +9,23 @@
 
                     var parent = sourceElement.parentNode
                     while (sourceElement.firstChild) { parent.insertBefore(sourceElement.firstChild, sourceElement)}
-                    parent.removeChild(sourceElement)    
+                    parent.removeChild(sourceElement)   
+                    
+                    adjustLayout()
                 }
             }
         }
         xhttp.open("GET", url, true);
         xhttp.send();
+    }
+
+    const adjustLayout = function() {
+        let bodyStyle = window.getComputedStyle(document.body)
+        if(bodyStyle.margin !== '0px') {
+            sbnheader.style.marginTop = '-' + bodyStyle.marginTop;
+            sbnheader.style.marginLeft = '-' + bodyStyle.marginLeft;
+            sbnheader.style.marginRight = '-' + bodyStyle.marginRight;
+        }
     }
 
     let sbnheader = document.createElement('header')
