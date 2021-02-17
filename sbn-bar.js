@@ -27,4 +27,4 @@
     css.type = 'text/css';
     document.body.appendChild(css)
 
-})();
+})(document, window);
