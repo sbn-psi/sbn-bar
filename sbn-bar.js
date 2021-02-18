@@ -22,9 +22,10 @@
     const adjustLayout = function() {
         let bodyStyle = window.getComputedStyle(document.body)
         if(bodyStyle.margin !== '0px') {
-            sbnheader.style.marginTop = '-' + bodyStyle.marginTop;
-            sbnheader.style.marginLeft = '-' + bodyStyle.marginLeft;
-            sbnheader.style.marginRight = '-' + bodyStyle.marginRight;
+            const bar = document.getElementById('sbn-bar')
+            bar.style.marginTop = '-' + bodyStyle.marginTop;
+            bar.style.marginLeft = '-' + bodyStyle.marginLeft;
+            bar.style.marginRight = '-' + bodyStyle.marginRight;
         }
     }
 
