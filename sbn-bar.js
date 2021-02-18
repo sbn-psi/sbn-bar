@@ -52,4 +52,11 @@
     css.type = 'text/css';
     document.body.appendChild(css)
 
+    console.log(document.cookie)
+    const currentTheme = document.cookie ? document.cookie.split('; ').find(row => row.startsWith('theme=')).split('=')[1] : null
+
+    if (!!currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+    }
+
 })(document, window);
