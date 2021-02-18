@@ -20,12 +20,25 @@
     }
 
     const adjustLayout = function() {
-        let bodyStyle = window.getComputedStyle(document.body)
+        const bodyStyle = window.getComputedStyle(document.body)
+        const bar = document.getElementById('sbn-bar')
+        
+        // zero out insiet
         if(bodyStyle.margin !== '0px') {
-            const bar = document.getElementById('sbn-bar')
             bar.style.marginTop = '-' + bodyStyle.marginTop;
             bar.style.marginLeft = '-' + bodyStyle.marginLeft;
             bar.style.marginRight = '-' + bodyStyle.marginRight;
+        }
+
+        const elems = document.body.getElementsByTagName("*");
+        // adjust fixed elements
+        for (node of elems) {
+            const nodeStyle = window.getComputedStyle(node)
+            if (nodeStyle.position === 'fixed') {
+                const top = parseFloat(nodeStyle.top);
+                node.style.top = (top + 57) + 'px';
+            }
+
         }
     }
 
