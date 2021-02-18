@@ -53,7 +53,8 @@
     document.body.appendChild(css)
 
     console.log(document.cookie)
-    const currentTheme = document.cookie ? document.cookie.split('; ').find(row => row.startsWith('theme=')).split('=')[1] : null
+    const cookie = document.cookie ? document.cookie.split('; ').find(row => row.startsWith('SBNTHEME=')) : null
+    const currentTheme = cookie ? cookie.split('=')[1] : null
 
     if (!!currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
