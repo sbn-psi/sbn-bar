@@ -5,6 +5,9 @@
     text-decoration: none !important;
 }
 
+#sbn-bar img {
+    height: 24px;
+}
 
 #sbn-bar {
     height: 57px; /* nav bar height */
@@ -21,28 +24,26 @@
 
 #sbn-bar ul {
     padding: 16px;
+    display: flex;
+    flex-flow: row nowrap;
 }
 
 #sbn-bar li {
     list-style: none;
+    margin: 16px;
 }
 
 .sbn-title, .sbn-subtitle {
     font-size: 1.3em;
     padding: 16px;
+    line-height: 1.3em;
 }
 
 .sbn-subtitle {
     display: block;
     margin-right: auto;
-    margin-left: -16px;
 }
 
 .sbn-subtitle:hover {
     color: white !important;
-}
-
-.sbn-title::after {
-    content: '|';
-    margin-left: 16px;
 }
