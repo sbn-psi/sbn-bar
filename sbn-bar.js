@@ -52,6 +52,11 @@
     css.type = 'text/css';
     document.body.appendChild(css)
 
+    let font = document.createElement('link');
+    font.href = 'https://fonts.googleapis.com/css?family=Roboto';
+    font.rel = 'stylesheet';
+    document.body.appendChild(font)
+
     const cookie = document.cookie ? document.cookie.split('; ').find(row => row.startsWith('SBNTHEME=')) : null
     const currentTheme = cookie ? cookie.split('=')[1] : null
 
